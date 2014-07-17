@@ -3,8 +3,17 @@
 
     <xsl:output method="xml" indent="yes"/>
 
-    <xsl:template match="/Document">
-		<hello><xsl:value-of select="." /></hello>
+    <xsl:template match="/hello">
+        <html>
+			<head>
+				<title>XSLT to XHTML via XProc</title>
+			</head>
+			<body>
+				<pre>
+					<xsl:value-of select="." />
+				</pre>
+			</body>
+		</html>
     </xsl:template>
 
     <xsl:template match="Title">

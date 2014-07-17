@@ -15,6 +15,7 @@ do
   fileName=$(basename $f)
   echo "========================================================================================="
   echo "Processing $f file"  
+  echo "File Name $fileName"
   # take action on each file. $f store current file name
-  java -cp calabash.jar com.xmlcalabash.drivers.Main -isource=$f -oresult=$OUTPUT/$fileName.xml -oreport=$OUTPUT/$fileName-report.xml $1
+  java -cp calabash.jar com.xmlcalabash.drivers.Main -isource=$f -oresult=$OUTPUT/$fileName.xml -oreport=$OUTPUT/$fileName-report.xml -oresult2=$OUTPUT/$fileName-2.xml $1
 done

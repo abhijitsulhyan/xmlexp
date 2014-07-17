@@ -8,7 +8,10 @@
     <p:output port="report">
         <p:pipe port="report" step="schematron"/>
     </p:output>
-    <p:validate-with-schematron name="schematron">
+    <p:output port="result2">
+        <p:pipe port="result" step="xslt2"/>
+    </p:output>
+    <p:validate-with-schematron assert-valid="false" name="schematron">
         <p:input port="schema">
             <p:document href="check-classifications.sch"/>
         </p:input>
@@ -19,6 +22,14 @@
     <p:xslt name="xslt1">
         <p:input port="stylesheet">
             <p:document href="stylesheet.xsl" />
+        </p:input>
+         <p:input port="parameters" sequence="true">
+            <p:empty/>
+        </p:input>
+    </p:xslt>
+    <p:xslt name="xslt2">
+        <p:input port="stylesheet">
+            <p:document href="stylesheet2.xsl" />
         </p:input>
          <p:input port="parameters" sequence="true">
             <p:empty/>
