@@ -14,6 +14,8 @@ for f in $INPUT
 do
   fileName=$(basename $f)
   echo "========================================================================================="
+  extension="${fileName##*.}"
+  fileName="${fileName%.*}"
   echo "Processing $f file"  
   echo "File Name $fileName"
   # take action on each file. $f store current file name
